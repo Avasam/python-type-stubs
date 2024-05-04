@@ -3,3 +3,5 @@ matplotlib
 pytest
 mypy==0.950
 typing_extensions==4.2.0
+flake8-pyi
+flake8-noqa

@@ -28,6 +28,9 @@ jobs:
         run:
           python -m pip install -r tests/requirements.txt
 
+      - name: Run flake8-pyi tests on stubs
+        run: flake8 stubs/
+
       - name: Run pyright tests
         uses: gramster/pyright-action@main
         with:

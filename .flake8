@@ -1,0 +1,26 @@
+# The following rules are incompatible with or enforced by Black:
+#     E203   whitespace before ':' -- scripts only
+#     E301   expected 1 blank line
+#     E302   expected 2 blank lines
+#     E305   expected 2 blank lines
+#     E501   line too long
+#     E701   Multiple statements on one line (colon) -- disallows "..." on the same line
+
+# Some rules are considered irrelevant to stub files:
+#     F401   imported but unused -- does not recognize re-exports
+#            https://github.com/PyCQA/pyflakes/issues/474
+
+# Rules that are out of the control of stub authors:
+#     E741   ambiguous variable name
+#     F403   import *' used; unable to detect undefined names
+#     F405   defined from star imports
+
+[flake8]
+exlude = F401
+extend-ignore = E301, E302, E305, E501, E701
+per-file-ignores =
+  *.py: E203
+  *.pyi: E741, F401, F403, F405
+
+exclude = .venv*,.git
+noqa_require_code = true
