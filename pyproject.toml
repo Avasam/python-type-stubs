@@ -86,9 +86,14 @@ extra-standard-library = [
 exclude = ["build", ".git"]
 stubPath = "./stubs"
 pythonversion = "3.9" # Target oldest supported Python version
-typeCheckingMode = "standard"
-# Partial stubs are acceptable
+typeCheckingMode = "strict"
+# Partial/incomplete stubs are acceptable
+reportIncompleteStub = false
+reportMissingParameterType = false
+reportMissingTypeArgument = false
 reportUnknownArgumentType = false
+reportUnknownParameterType = false
+reportUnknownVariableType = false
 # Stubs-only packages are fine for testing
 reportMissingModuleSource = false
 # Stubs are allowed to use private variables
@@ -105,15 +110,26 @@ reportPropertyTypeMismatch = false
 reportOverlappingOverload = false
 # The name of the self/cls parameter is out of third-party stubs' control.
 reportSelfClsParameterName = false
-# Not an error by default in standard mode
-reportUnsupportedDunderAll = "error"
+# Not all imports in these stubs are gonna be typed
+reportMissingTypeStubs = false
+# TODO
+reportConstantRedefinition = false
+reportInconsistentConstructor = false
+reportUnknownLambdaType = false
+reportUnknownMemberType = false
+reportUntypedBaseClass = false
+reportUntypedClassDecorator = false
+reportUntypedFunctionDecorator = false
+reportUntypedNamedTuple = false # Same as PYI024
+reportUnusedImport = false # Same as F401
+reportUnusedVariable = false
 
 [tool.mypy]
 python_version = "3.9" # Target oldest supported Python version
 strict = true
 show_column_numbers = true
 warn_unused_ignores = false # Change from pandas
-# Partial stubs are acceptable
+# Partial/incomplete stubs are acceptable
 disallow_any_generics = false
 disallow_incomplete_defs = false
 disallow_untyped_defs = false
