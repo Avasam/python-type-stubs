@@ -55,12 +55,18 @@ target-version = "py39"
 
 [tool.ruff.lint]
 extend-select = [
+    "C4", # flake8-comprehensions
+    "DTZ", # flake8-datetimez
     "FA", # flake8-future-annotations
+    "FLY", # flynt
     "I", # isort
-    "PYI", # flake8-pyi
+    "PIE", # flake8-pie
+    "RSE", # flake8-raise
+    "SLOT", # flake8-slots
+    "T10", # flake8-debugger
     "UP", # pyupgrade
     "W", # pycodestyle Warning
-    "PIE790", # unnecessary-placeholder
+    "YTT", # flake8-2020
 ]
 ignore = [
     ###
