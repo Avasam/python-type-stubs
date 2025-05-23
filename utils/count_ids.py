@@ -1,7 +1,7 @@
 #!/bin/python
 from __future__ import annotations
 
-__doc__ = """Count IDs.
+__doc__ = r"""Count IDs.
 
 Usage:
   count_ids [--path=<root>] [--suffix=<filesuffix>] [--pat=<pat>] [--uniq]
@@ -15,6 +15,13 @@ Options:
   --suffix=<filesuffix>   File name suffix to restrict to (default is all files)
   --pat=<pat>             A regular expression to use to extract IDs
   --uniq                  Only output IDs that occur once only (with their context)
+
+Examples:
+  All unique private symbols:
+    count_ids --path=stubs --suffix=.pyi --uniq --pat="\b_[a-zA-Z].+?\b"
+
+  All unused module-level symbols (except classes and defs):
+    count_ids --path=stubs --suffix=.pyi --uniq --pat="^_[a-zA-Z].+?\b"
 """
 
 import glob
