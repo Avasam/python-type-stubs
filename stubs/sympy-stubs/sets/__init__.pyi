@@ -1,11 +1,22 @@
 from sympy.sets.conditionset import ConditionSet
 from sympy.sets.contains import Contains
-from sympy.sets.fancysets import ComplexRegion, ImageSet, Range
+from sympy.sets.fancysets import (
+    Complexes as _Complexes,
+    ComplexRegion,
+    ImageSet,
+    Integers as _Integers,
+    Naturals as _Naturals,
+    Naturals0 as _Naturals0,
+    Range,
+    Rationals as _Rationals,
+    Reals as _Reals,
+)
 from sympy.sets.ordinals import OmegaPower, Ordinal, ord0
 from sympy.sets.powerset import PowerSet
 from sympy.sets.sets import (
     Complement,
     DisjointUnion,
+    EmptySet as _EmptySet,
     FiniteSet,
     Intersection,
     Interval,
@@ -13,17 +24,18 @@ from sympy.sets.sets import (
     Set,
     SymmetricDifference,
     Union,
+    UniversalSet as _UniversalSet,
     imageset,
 )
 
-Complexes = ...
-EmptySet = ...
-Integers = ...
-Naturals = ...
-Naturals0 = ...
-Rationals = ...
-Reals = ...
-UniversalSet = ...
+Complexes: _Complexes
+EmptySet: _EmptySet
+Integers: _Integers
+Naturals: _Naturals
+Naturals0: _Naturals0
+Rationals: _Rationals
+Reals: _Reals
+UniversalSet: _UniversalSet
 __all__ = [
     "Set",
     "Interval",
@@ -46,7 +58,6 @@ __all__ = [
     "OmegaPower",
     "ord0",
     "PowerSet",
-    "Reals",
     "Naturals",
     "Naturals0",
     "UniversalSet",

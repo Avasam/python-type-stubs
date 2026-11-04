@@ -1,7 +1,8 @@
 from sympy.core.assumptions import check_assumptions, failing_assumptions
+from sympy.sets.fancysets import Complexes as _Complexes
 from sympy.solvers.decompogen import decompogen
 from sympy.solvers.deutils import ode_order
-from sympy.solvers.diophantine import diophantine
+from sympy.solvers.diophantine.diophantine import diophantine
 from sympy.solvers.inequalities import (
     reduce_abs_inequalities,
     reduce_abs_inequality,
@@ -27,7 +28,7 @@ from sympy.solvers.solvers import (
 )
 from sympy.solvers.solveset import linear_eq_to_matrix, linsolve, nonlinsolve, solveset, substitution
 
-Complexes = ...
+Complexes: _Complexes
 __all__ = [
     "solve",
     "solve_linear_system",
